@@ -1,7 +1,7 @@
 # das-1-2025-2-a
 
 bloquinho:
-bloquinho.com/waltercoan
+bloquinho.app/waltercoan
 
 ## aula 1 - 04/08/2025:
 engenharia de software moderna Capítulo 5
@@ -40,6 +40,7 @@ flecha completa linha continua: associação
 
 Auto acoplamento: ao mexer em um canto no codigo impacta em outro canto obscuro, dai o cliente acha e taca o pau em nois...
 
+```
 class A {
 
    private B b;
@@ -49,3 +50,28 @@ class A {
       b.push();
       
    } //construtor
+```
+## aula 1 - 05/08/2025:
+### SOLID
+
+_"No one hears a word they say"_ 
+Duran.
+
+Single Responsibility Principle
+Open/Closed Principle
+Liskov Substitution Principle
+Interface Segregation 
+Dependency inversible Principle
+
+### Single Responsibility Principle:
+Responsabilidade Unica
+
+**MVC**
+
+**Model:** Dados
+**View:** HTML
+**Controller:** Controla a tela 
+
+### Interface Segregation 
+
+A classe só implementa o que vai usar. Nada de métodos inúteis só porque a interface mandou.
