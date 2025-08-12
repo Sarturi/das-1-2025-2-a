@@ -75,3 +75,10 @@ Responsabilidade Unica
 ### Interface Segregation 
 
 A classe só implementa o que vai usar. Nada de métodos inúteis só porque a interface mandou.
+
+
+### Aula 11/08
+
+Princípio da inversão de dependência: classe estabelece dependências com abstração, pois abstrações sao mais estáveis do que implementações concretas
+
+preferir composição a herança pois pode gerar problemas de manutenção e evolução das classes de um sistema
