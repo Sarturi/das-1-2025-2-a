@@ -82,3 +82,9 @@ A classe só implementa o que vai usar. Nada de métodos inúteis só porque a i
 Princípio da inversão de dependência: classe estabelece dependências com abstração, pois abstrações sao mais estáveis do que implementações concretas
 
 preferir composição a herança pois pode gerar problemas de manutenção e evolução das classes de um sistema
+
+Princípio de Demeter: princípio do menor conhecimento - a classe deve utilizar código que pertence somente a sua própria classe, ou que foi passada como parâmetro. Ou seja ela é feita para evitar variáveis globais, que são frágeis.
+
+### Aula 12/08
+
+Liskov: uma subclasse deve poder ser usada no lugar da sua superclasse sem alterar o funcionamento do programa
