@@ -88,3 +88,15 @@ Princípio de Demeter: princípio do menor conhecimento - a classe deve utilizar
 ### Aula 12/08
 
 Liskov: uma subclasse deve poder ser usada no lugar da sua superclasse sem alterar o funcionamento do programa
+
+### Aula 26/08
+
+Caracteristicas da Arquitetura:
+-  São as caracteristicas que pode ser escolhidas para um projeto, por exemplo: Confiabilidade, **Segurança**.
+"Se escolher todas não sai nunca" - Walter
+
+Descisões de arquitetura:
+-  Modelo que será utilizado no projeto, como por exemplo o MVC, no cenário perfeito as camadas não devem ser puladas, o que no mundo real não acontece sempre, por conta de prazos entre outros.
+
+Principios do design:
+-  São boas praticas, sendo que sempre que possivel utilizar a mensageria assincrona entre os serviços para aumentar o desempenho
