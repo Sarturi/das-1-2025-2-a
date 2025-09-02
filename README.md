@@ -100,3 +100,77 @@ Descisões de arquitetura:
 
 Principios do design:
 -  São boas praticas, sendo que sempre que possivel utilizar a mensageria assincrona entre os serviços para aumentar o desempenho
+
+### Aula 01/09/2025
+
+REVISÃO DA AULA 26/08
+
+Características de arquitetura
+- Podem ser chamados de Requisitos não funcionais
+
+- Novamente: É IMPOSSIVEL ATENDER À TODOS OS ITENS
+
+- Decisão arquitetural é a decisão que vai atender as características escolhidas
+
+- Principios de design: 
+
+---
+Expectativa de um arquiteto:
+
+- Tomar decisões de arquitetura:
+
+"Tomar decisões de arquitetura
+Analisar continuamente a arquitetura
+Manter-se atualizado com as últimas tendências
+Assegurar a conformidade com as decisões
+Exposição e experiência diversificadas
+Ter conhecimento sobre o domínio do negócio
+Ter habilidades interpessoais
+Entender e lidar bem com questões políticas"
+- Analisar continuamente a arquitetura:
+
+Todo sistema muda o tempo todo, Continuamente analisar o que esta sendo feito e em certas horas tomar decisões de refazer certas partes.
+
+- Manter-se atualizado com as últimas tendências
+
+Desenvolver software hoje em dia esta muito complexo, então é necessário estar sabendo do que esta tendo de tech nova no mercado
+
+- Assegurar a conformidade com as decisões
+
+É papel do arquiteto que os padrões estão sendo seguidos, pesquisando por ferramentas e metodos para verificar o que esta sendo desenvolvido
+
+- Exposição e experiência diversificadas
+
+É importante que ele tenha uma boa experiencia, que dai ele pega os tipos de problemas que cada sistema
+
+- Ter conhecimento sobre o domínio do negócio
+
+O arquiteto deve ter conhecimento sobre as regras de negócio, sendo muito importante ter dominio minimo do negócio
+
+- Ter habilidades interpessoais
+
+É necessário saber lidar com outros sere humanos
+
+- Entender e lidar bem com questões políticas
+
+Ele tem que ser capaz que existe uma estrutura hierarquica, ele precisa saber negociar com clientes e outros lideres
+
+---
+
+DevOps
+
+É uma maneira de eu entregar valor para meu cliente mais rapido
+
+DevOps como cultura: Todos devem participar, então todos cuidam do sistema.
+
+Planejamento = Gestão de projetos: kanban, Scrum
+
+Criar: Programar
+
+Integração continua: é necessário ter uma banch Main (sempre pode ser liberada para o cliente)
+
+Continuos deployment/delivery: Se um programador publicar uma alteração todos os clientes recebem em algumas horas
+
+Operar: é necessário ter observabilidade, é necessário 
+
+Feedback: é necessário para a melhoria continua do software

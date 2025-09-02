@@ -12,7 +12,7 @@ public class Cliente {
         grupoFamilia.subscribe(p2);
         grupoFamilia.subscribe(p3);
 
-        grupoFamilia.setMainState('BOM DIAA');
+        grupoFamilia.setMainState("BOM DIAA");
         grupoFamilia.notifySubscribers();
     }
 }
