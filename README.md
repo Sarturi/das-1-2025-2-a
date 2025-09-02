@@ -174,3 +174,21 @@ Continuos deployment/delivery: Se um programador publicar uma alteração todos 
 Operar: é necessário ter observabilidade, é necessário 
 
 Feedback: é necessário para a melhoria continua do software
+
+---
+### Aula 02/09/2025
+
+Qual a diferença do arquiteto do para o desenvolvedor?
+
+Ambos deve trabalhar em conjunto para manter as melhores práticas, mas entretanto eles tem algumas diferenças e são elas:
+
+Arquiteto:
+1. amplitude técnica para pensar como arquiteto e ver as coisas de um ponto de vista da arquitetura
+2. amplo conhecimento da tecnologia e como usá-la para resolver problemas específicos
+3. amplitude é mais importante do que profundidade no quesito de conhecimento de soluções
+
+Desenvolvedor:
+1. Deve ter profundidade técnica em relação as técnicas de desenvolvimento
+2. Tem especialização para resolver algum problema de uma maneira, mas talvez não seja a melhor forma
+
+"Os desenvolvedores passam suas carreiras inteiras aprimorando a especialização" - livro do piriquito
