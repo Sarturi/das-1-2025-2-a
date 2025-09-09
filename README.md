@@ -192,3 +192,35 @@ Desenvolvedor:
 2. Tem especialização para resolver algum problema de uma maneira, mas talvez não seja a melhor forma
 
 "Os desenvolvedores passam suas carreiras inteiras aprimorando a especialização" - livro do piriquito
+
+---
+### Aula 08/09/2025
+Trade off?
+Não existem resposta perfeita, apenas compensações
+
+- Arquitetura baseada em tópicos
+   - Um tópico funciona como um grupão do zap
+   - Um para muitos
+      -  basta o publisher publicar uma mensagem e todos irão receber essa mesma mensagem
+      -  Se conecta ao Broker e todos os inscritos recebem automagicamente
+   - Tópicos em modelo Stream
+      - Seria como alguem mandar mensagem e você estar sem internet, após se conectar você recebe a mensagem
+      - As mensagens são guardadas em ordem no disco e após se conectar ele puxa as alterações que estão faltando
+   - Totalmente desacoplado então se algo for adicionado não será necessário mudar nada
+   - Extensibilidade arquitetural
+   - Desvantagens:
+      - Acesso a dados e preocupações a segurança de todos
+      - Nenhum contrato heterogêneo
+      - Monitoramento e escalabilidade programática
+
+- Arquitetura baseada em Queue
+     - 1 para 1
+     - Sender -> Receiver
+     - Buffer:
+        - Salva a mensagem
+     - Pooling:
+        - Seria buscar a mensagem na fila 
+     - FIFO
+     - Enqueue
+     - Dequeue
+     - Não é desacoplado, se algo for alterado vai precisar alterar a fila
