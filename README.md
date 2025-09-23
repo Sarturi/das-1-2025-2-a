@@ -1,45 +1,49 @@
 # das-1-2025-2-a
+Repo dedicado a matéria de Design e Arquitetura de Software, lecionada pelo professor Walter Coan.
 
 bloquinho:
 bloquinho.app/waltercoan
 
-## aula 1 - 04/08/2025:
-engenharia de software moderna Capítulo 5
-Principios de Projeto
+<details><summary>Aula 04/08:</summary>
+   
+- engenharia de software moderna Capítulo 5
 
-Todo software tende a crescer, assim aumentando a complexidade
+- Principios de Projeto
+
+- Todo software tende a crescer, assim aumentando a complexidade
 
 ### Abstração: 
 é uma representação simples de uma problema, para resolver algum problema da vida real
 
-config - tralha?
+- config - definições globais
 
-controller- html api rest
+- controller- html api rest
 
-entity - dados
+- entity - dados
 
-repository - conexão bd
+- repository - conexão bd
 
-service - logica
+- service - lógica
 
 ### Ocultamento de informação:
 
-é o encapsulamento, ou seja, seria aquele private antes atributo
+- é o encapsulamento, ou seja, seria aquele private antes atributo
 
-flexibilidade a mudanças: ao isolar as funcionalidades fica mais facil de trabalhar com funcionalidades separadas
+- flexibilidade a mudanças: ao isolar as funcionalidades fica mais facil de trabalhar com funcionalidades separadas
 
 ### Coesão: 
-Um codigo coeso é um que faz UMA coisa bem feita, assim. Exemplo: classes anêmicas, que tem apenas os atributos e get's e set's
+- Um codigo coeso é um que faz UMA coisa bem feita, assim. Exemplo: classes anêmicas, que tem apenas os atributos e get's e set's
 
-flecha vazada com linha continua: extends
+- flecha vazada com linha continua: extends
 
-flecha vazada com linha pontilhada: 
-implements
+- flecha vazada com linha pontilhada: implements
 
-flecha completa linha continua: associação
+- flecha completa linha continua: associação
 
-Auto acoplamento: ao mexer em um canto no codigo impacta em outro canto obscuro, dai o cliente acha e taca o pau em nois...
-
+### Acoplamento:
+- Se refere ao quanto uma classe/módulo depende de outra
+**Alto:** Uma classe dependende muito de outra, se algo for alterada em uma impacta na outra
+**Baixo:** Depende menos das outras, facilitando na manutenção
 ```
 class A {
 
@@ -51,8 +55,10 @@ class A {
       
    } //construtor
 ```
-## aula 1 - 05/08/2025:
-### SOLID
+</details>
+<details> <summary>Aula 05/08:</summary>
+
+**SOLID**
 
 _"No one hears a word they say"_ 
 Duran.
@@ -63,8 +69,8 @@ Liskov Substitution Principle
 Interface Segregation 
 Dependency inversible Principle
 
-### Single Responsibility Principle:
-Responsabilidade Unica
+**Single Responsibility Principle:**
+- Um classe, método ou função faz uma unica coisa muito bem feita e apenas ela, tendo apenas uma responsabilidade
 
 **MVC**
 
@@ -73,35 +79,47 @@ Responsabilidade Unica
 **Controller:** Controla a tela 
 
 ### Interface Segregation 
+Classe não deve ser forçada a implementar mais do que ela irá usar. Melhor ter interfaces pequenas do que uma genérica com muitos metodos
+</details>
 
-A classe só implementa o que vai usar. Nada de métodos inúteis só porque a interface mandou.
+<details><summary>Aula 11/08</summary>
 
+- preferir composição a herança pois pode gerar problemas de manutenção e evolução das classes de um sistema
 
-### Aula 11/08
+**Open/Closed Principle:**
+Entidades devem estar abertas para extensão e fechadas para modificações.
 
-Princípio da inversão de dependência: classe estabelece dependências com abstração, pois abstrações sao mais estáveis do que implementações concretas
+**Princípio da inversão de dependência:** 
+- módulos de alto nivel não devem depender de módulos de baixo nivel. Os dois devem depender de uma interface em comum
+  M1 -> Interface <- M2
 
-preferir composição a herança pois pode gerar problemas de manutenção e evolução das classes de um sistema
+**Princípio de Demeter:**
+princípio do menor conhecimento - a classe deve utilizar código que pertence somente a sua própria classe, ou que foi passada como parâmetro. Ou seja ela é feita para evitar variáveis globais, que são frágeis.
+Deve chamar apenas métodos:
+1. Da própria classe;
+2. Objetos passados como parametro;
+3. Objetos criados dentro do método;
+4. Atributos da classe.
+</details>
+<details><summary>Aula 12/08:</summary>
 
-Princípio de Demeter: princípio do menor conhecimento - a classe deve utilizar código que pertence somente a sua própria classe, ou que foi passada como parâmetro. Ou seja ela é feita para evitar variáveis globais, que são frágeis.
+Liskov Substitution Principle: uma subclasse deve poder ser usada no lugar da sua superclasse sem alterar o funcionamento do programa
+</details>
 
-### Aula 12/08
-
-Liskov: uma subclasse deve poder ser usada no lugar da sua superclasse sem alterar o funcionamento do programa
-
-### Aula 26/08
+<details><summary>Aula 26/08:</summary>
 
 Caracteristicas da Arquitetura:
--  São as caracteristicas que pode ser escolhidas para um projeto, por exemplo: Confiabilidade, **Segurança**.
+-  São as caracteristicas que pode ser escolhidas para um projeto, são os requisitos não funcionais, por exemplo: Confiabilidade, **Segurança**.
 "Se escolher todas não sai nunca" - Walter
 
 Descisões de arquitetura:
 -  Modelo que será utilizado no projeto, como por exemplo o MVC, no cenário perfeito as camadas não devem ser puladas, o que no mundo real não acontece sempre, por conta de prazos entre outros.
 
 Principios do design:
--  São boas praticas, sendo que sempre que possivel utilizar a mensageria assincrona entre os serviços para aumentar o desempenho
+-  São boas praticas que vem da arquitetura escolhida sendo que sempre que possivel utilizar a mensageria assincrona entre os serviços para aumentar o desempenho
+</details>
 
-### Aula 01/09/2025
+<details><summary>Aula 01/09:</summary>
 
 REVISÃO DA AULA 26/08
 
@@ -174,9 +192,9 @@ Continuos deployment/delivery: Se um programador publicar uma alteração todos 
 Operar: é necessário ter observabilidade, é necessário 
 
 Feedback: é necessário para a melhoria continua do software
+</details>
 
----
-### Aula 02/09/2025
+<details><summary>Aula 02/09:</summary>
 
 Qual a diferença do arquiteto do para o desenvolvedor?
 
@@ -192,11 +210,11 @@ Desenvolvedor:
 2. Tem especialização para resolver algum problema de uma maneira, mas talvez não seja a melhor forma
 
 "Os desenvolvedores passam suas carreiras inteiras aprimorando a especialização" - livro do piriquito
+</details>
 
----
-### Aula 08/09/2025
+<details><summary>Aula 08/09:</summary>
 Trade off?
-Não existem resposta perfeita, apenas compensações
+Não existem resposta perfeita, apenas compensações. Não é possivel atribuir todos os requisitos requiridos, é o "Depende" como falado anteriormente, não existe função ideal para tudo, não existe uma resposta certa ou errada, apenas compensações. A mesma característica pode ser abordada de maneiras diferentes.
 
 - Arquitetura baseada em tópicos
    - Um tópico funciona como um grupão do zap
@@ -224,3 +242,4 @@ Não existem resposta perfeita, apenas compensações
      - Enqueue
      - Dequeue
      - Não é desacoplado, se algo for alterado vai precisar alterar a fila
+</details>
