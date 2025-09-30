@@ -1,8 +1,12 @@
 # das-1-2025-2-a
 Repo dedicado a matéria de Design e Arquitetura de Software, lecionada pelo professor Walter Coan.
 
-bloquinho:
-bloquinho.app/waltercoan
+Material utilizado
+
+- bloquinho.app/waltercoan
+- https://learn.microsoft.com/pt-br/azure/architecture/patterns/circuit-breaker?wt.mc_id=AZ-MVP-5003638
+
+# Primeiro Bimestre
 
 <details><summary>Aula 04/08:</summary>
    
@@ -242,4 +246,20 @@ Não existem resposta perfeita, apenas compensações. Não é possivel atribuir
      - Enqueue
      - Dequeue
      - Não é desacoplado, se algo for alterado vai precisar alterar a fila
+</details>
+
+# Segundo Bimestre
+
+<details><summary>Aula 29/09</summary>
+
+Cricuit Breaker:
+- É proteger a comunicação entre sistemas, como um disjuntor
+
+Estados:
+- Closed: Tudo Ok ambos os serviços estão funcionando
+- Open: Deu ruim em algo, algo não conectou, pode ser definido uma margem, para não ir direto para open
+- Half-open: Tenta conectar novamente e vê se da certo, ele conta para bater um numero definido, mas se da errado ele volta para Open
+
+A chama B se A der timeout e o contador de timeout bater ele vai para, Open após o open ele tenta reconectar novamente na fase Half-open, se não der bom e bater o contador de timeout volta para Open, se conseguir se conectar aumenta o contador e após um numero de acertos volta para o estado Closed.
+
 </details>
