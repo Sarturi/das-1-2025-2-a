@@ -263,3 +263,24 @@ Estados:
 A chama B se A der timeout e o contador de timeout bater ele vai para, Open após o open ele tenta reconectar novamente na fase Half-open, se não der bom e bater o contador de timeout volta para Open, se conseguir se conectar aumenta o contador e após um numero de acertos volta para o estado Closed.
 
 </details>
+
+<details><summary>Aula 06/10</summary>
+
+Uma característica de arquitetura apresenta os seguintes critérios:
+- Define uma preocupação de design fora do domínio do negócio
+- Afeta algum aspecto estrutural do design
+- É fundamental ou relevante para o êxito da aplicação
+- Se representados em um triângulo, os critérios devem ser cumpridos conforme a aplicação opera.
+   
+</details>
+
+<details><summary>Aula 07/10</summary>
+CQRS:
+   Command Query Responsibility Segregation
+
+- Separa as responsabilidades de escrita e leitura de dados
+- Permite otimizar cada parte de forma independente
+- Facilita escalabilidade e manutenção do sistema
+- Se aplicado corretamente, melhora desempenho e organização do código.
+   
+</details>
