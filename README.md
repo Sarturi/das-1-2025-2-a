@@ -284,3 +284,26 @@ CQRS:
 - Se aplicado corretamente, melhora desempenho e organização do código.
    
 </details>
+
+<details><summary>Aula 13/10</summary>
+- Retry:
+Retry imediatamente: se falha tenta novamente depois
+Retry depois de delay: se falha depois de um tempo tenta novamente
+
+Estilos arquiteturais:
+
+- Um software usa mais de um estilo/padrão.
+
+- Padrão Grande bola de Lama: uma grande confusão de código. São sistemas que cresceram de forma orgânica, sem planejamento, desenvolvidos de qualquer jeito, com repetidas manutenções, e hoje em dia é muito caro e difícil de implementar coisas novas ou fazer correção.
+- Arquitetura unitária: usado em softwares embarcados(geladeira, microondas, friobagr, máquina de lavar), usado em um hardware específico
+- Cliente/servidor: divisão de papéis
+- Desktop + servidor de banco de dados: várias máquinas em uma instalação conectam-se em um computador com banco de dados
+- Navegador + servidor web: o banco de dados conecta no web server, e os clientes utilizam os navegadores para conectar no servidor web e retornar e devolver páginas HTML.
+   
+</details>
+
+<details><summary>Aula 14/10</summary>
+
+
+   
+</details>
