@@ -13,5 +13,6 @@
         <module>designpatterns</module>
         <module>solid</module>
         <module>eventos</module>
+        <module>pipeline</module>
     </modules>
 </project>
