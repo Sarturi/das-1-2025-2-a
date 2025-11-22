@@ -304,6 +304,228 @@ Estilos arquiteturais:
 
 <details><summary>Aula 14/10</summary>
 
+Arquiteturas de Três Camadas
 
+Monolíto:
+Aplicação em que todo o código, funcionalidades e módulos convivem no mesmo projeto, formando um único bloco.
+
+Arquitetura distribuída (microsserviços):
+O sistema é dividido em vários serviços independentes, cada um cuidando de uma responsabilidade específica e se comunicando entre si.
+
+Quando o monolito começa a ficar complicado de manter, com dificuldade para adicionar funcionalidades, pode ser interessante migrar para algo distribuído. Porém, microsserviços não são solução mágica — existem cenários onde o monolito continua sendo a melhor opção.
+
+Falácias comuns em sistemas distribuídos
+
+- Confiar que a rede nunca falha
+- Acreditar que a latência é desprezível
+- Assumir largura de banda ilimitada
+- Pensar que a rede é totalmente segura
+- Imaginar que a topologia permanece igual
+
+Padrões utilizados em arquiteturas distribuídas
+
+Log distribuído:
+Abordagem para reunir e organizar os logs gerados por diferentes serviços em um ponto central.
+
+Transações distribuídas:
+Ocorrência em que uma operação depende de dois ou mais serviços, exigindo coordenação para iniciar e finalizar a transação entre eles.
    
+</details>
+
+<details><summary>Aula 20/10</summary>
+A arquitetura em camadas é simples, comum e de baixo custo.
+
+Estrutura-se em níveis horizontais; normalmente quatro:
+
+  - **Apresentação**
+
+  - **Negócio (comercial)**
+
+  - **Persistência**
+
+  - **Banco de dados**
+
+Cada camada possui responsabilidade própria e deve se manter isolada das demais.
+
+A separação das responsabilidades facilita manutenção, organização e substituição de camadas sem impactar o restante do sistema.
+
+É particionada por função técnica (ex.: apresentação) e não por domínio, o que pode dificultar mudanças relacionadas ao negócio.
+
+Camadas podem ser:
+
+  - **Fechadas:** a requisição só pode acessar a camada imediatamente inferior.
+
+  - **Abertas:** permitem introduzir uma nova camada intermediária quando necessário.
+
+O conceito de isolamento torna as camadas independentes, permitindo substituir uma camada sem modificar as outras.
+
+Antipadrão **sinkhole:** quando uma requisição atravessa várias camadas sem lógica útil.
+
+  - Aceitável até cerca de 20% dos casos; acima disso indica má escolha de arquitetura.
+
+É uma boa opção quando:
+
+  - O sistema é pequeno ou simples.
+
+  - Há pouco tempo ou orçamento.
+
+  - O arquiteto ainda está entendendo os requisitos e necessidades comerciais.  
+</details>
+
+<details><summary>Aula 27/10</summary>
+Arquitetura Pipeline
+   
+- É uma arquitetura que os programas se comunicam de forma sequencial
+
+- Toda arquitetura de pipeline tem os Filtros Produtor, Transformador, Verificador e Consumidor
+   
+</details>
+
+<details><summary>Aula 03/11</summary>
+
+Arquitetura Microkernel
+
+- O **sistema central** contém apenas o mínimo necessário para o sistema funcionar.
+
+- A utilidade real surge com os **plug-ins**, que estendem e especializam o comportamento.
+
+- O sistema central pode ser:
+  
+  - Uma arquitetura em camadas,
+  
+  - Um monólito modular,
+  
+  - Ou dividido em serviços de domínio separados.
+
+### Plug-ins
+
+- São **autônomos**, independentes e focados em funcionalidades específicas.
+
+- Isolam código volátil, facilitando **manutenção** e **testes**.
+
+- Geralmente se comunicam com o núcleo via **chamadas diretas** (ponto a ponto).
+
+- Porém, plug-ins remotos tornam o sistema **distribuído**, aumentando complexidade, custo e dificuldade de implantação.
+
+### Registro de Plug-ins
+
+- O sistema central precisa saber quais plug-ins existem e como acessá-los.
+
+- Pode ser:
+  
+  - Um simples mapa interno (chave -> plug-in),
+  
+  - Ou um mecanismo completo de registro e descoberta.
+
+### Contratos
+
+- Definem comportamento, entradas e saídas entre o núcleo e os plug-ins.
+
+- Normalmente padronizados dentro do domínio.
+
+### Classificação das Características
+
+- **Pontos fortes:** simplicidade, baixo custo, boa testabilidade, boa confiabilidade.
+
+- **Pontos fracos:** escalabilidade limitada, baixa tolerância a falhas, baixa elasticidade.
+
+- Pode ser particionada **por domínio** ou **tecnicamente**.
+
+- A adição, remoção ou substituição de funcionalidades é fácil graças aos plug-ins independentes.
+
+</details>
+
+<details><summary>Aula 10/11</summary>
+
+Arquitetura de Microsserviços
+
+- Diferente de outros estilos, microsserviços **não surgem de padrões repetidos**, mas são inspirados no **DDD**, especialmente em **contextos delimitados** e **domínios**.
+
+- Cada serviço define apenas o que realmente precisa para operar.
+
+### Distribuição
+
+- Microsserviços rodam em máquinas/VMs separadas, otimizando uso de recursos.
+
+- Como são distribuídos, sofrem com:
+  
+  - Latência maior (chamadas de rede),
+  
+  - Checagens de segurança repetidas,
+  
+  - Overhead geral.
+
+### Contexto Delimitado
+
+- Cada serviço modela um domínio específico ou fluxo de trabalho completo.
+
+- É a forma mais extrema de arquitetura particionada por domínio.
+
+### Granularidade
+
+- Serviços não devem ser pequenos demais.
+
+- Diretrizes:
+  
+  - **Finalidade:** o serviço deve ser funcionalmente coeso.
+  
+  - **Transações:** evitar transações corporativas entre serviços.
+  
+  - **Coreografia:** se vários serviços precisarem conversar demais, talvez devam ser agrupados.
+
+- A granularidade raramente fica certa de primeira -> exige iteração.
+
+### Isolamento de Dados
+
+- Cada microsserviço possui seu **próprio banco de dados**.
+
+- Escolha do banco pode variar por serviço (preço, tecnologia, desempenho).
+
+- Evitar modelagens simplistas só para “lembrar” entidades.
+
+- O isolamento é essencial para autonomia das equipes.
+
+### Camada de API
+
+- Pode expor operações úteis.
+
+- **Não deve** servir como orquestrador ou mediador central.
+
+### Reutilização Operacional
+
+- Diferente da abordagem SOA, microsserviços separam lógica de domínio da lógica operacional.
+
+- O padrão **sidecar** centraliza preocupações operacionais (log, monitoramento, segurança).
+
+- Com isso, forma-se uma **malha de serviços** com controle unificado.
+
+### Front-ends
+
+- Interface originalmente fazia parte do contexto delimitado, mas isso é difícil na prática.
+
+- Surgem dois padrões:
+  
+  - Front-end usando a **camada de API**,
+  
+  - Front-end como um serviço separado com granularidade própria.
+
+### Comunicação
+
+- Escolher entre **síncrona** e **assíncrona** é essencial para manter baixo acoplamento.
+
+- Coreografia segue estilo orientado a eventos.
+
+- Orquestração é centralizada, porém menos alinhada com a filosofia de microsserviços.
+
+### Transações e Sagas
+
+- Transações cruzando serviços quebram o desacoplamento.
+
+- Sagas são o mecanismo recomendado para coordenar consistência.
+
+### Características da Arquitetura
+
+- **Pontos fortes:** alta escalabilidade, elasticidade, evolução contínua.
+
+- **Pontos fracos:** performance menor devido a muitas chamadas de rede e verificações de segurança.
 </details>
